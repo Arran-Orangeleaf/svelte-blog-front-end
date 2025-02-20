@@ -1,7 +1,7 @@
 <script>
     import Boxes from '$lib/components/Boxes.svelte'
     let { data } = $props();
-   // export let data;
+    console.log(data.post.boxes);
 </script>
 <h1 class="text-5xl">{data.post["Page Title"]}</h1>
 <br>
@@ -9,5 +9,6 @@
     {data.post["Custom Content"]}
 </div>
 <div>
-    <Boxes boxSet={"home-page"}></Boxes>
+    {JSON.stringify(data.post)}
+    <Boxes boxSet={data.post.boxes}></Boxes>
 </div>
